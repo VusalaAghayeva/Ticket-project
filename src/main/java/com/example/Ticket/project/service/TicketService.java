@@ -28,7 +28,7 @@ public class TicketService {
     public TicketDto getTicketById(Long id) {
         return ticketRepository.findById(id)
                 .map(TicketMapper::mapEntityToDto)
-                .orElseThrow(() -> new TicketNotFoundException("Book not found"));
+                .orElseThrow(() -> new TicketNotFoundException("Ticket not found"));
     }
 
     public void createTicket(CreateTicketRequest request) {
